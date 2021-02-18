@@ -17,7 +17,7 @@ export const getDate = async event => {
   let returnMessage;
 
   if (isValidDate) {
-    if (new Date(startDate) == "Invalid Date")
+    if (Object.prototype.toString.call(startDate) !== "[object Date]")
       startDate = palindrome.stringToDate(startDate);
     const date = palindrome.getNextPalindromeDate(startDate);
 
