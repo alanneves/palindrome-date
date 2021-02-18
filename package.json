@@ -1,0 +1,17 @@
+{
+  "name": "palindrome-date",
+  "version": "2.2.0",
+  "description": "Simple api to pick up the next palindrome date",
+  "main": "src/handler.js",
+  "scripts": {
+    "test": "serverless-bundle test"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-bundle": "3.2.0",
+    "serverless-dotenv-plugin": "^2.1.1",
+    "serverless-offline": "^5.3.3"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,32 @@
+service: palindrome-date
+
+package:
+  individually: true
+
+plugins:
+  - serverless-bundle
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  apiGateway: {
+    shouldStartNameWithService: true
+  }
+
+
+functions:
+  date:
+    handler: src/handler.getDate
+    events:
+      - http:
+          method: GET
+          path: date
+          cors: true
+          request:
+            template:
+              application/json: >
+                {
+                  "startDate" : "$input.params('startDate')"
+                }
